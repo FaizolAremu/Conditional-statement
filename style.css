@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+
+    background: #0f172a;
+
+    min-height: 100vh;
+
+    color: white;
+
+    padding: 60px 20px;
+}
+
+
+
+/* Main Layout */
+
+.assignment-wrapper{
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+
+    max-width: 1400px;
+
+    margin: auto;
+}
+
+
+
+/* Card */
+
+.card{
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(18px);
+
+    border-radius: 28px;
+
+    padding: 30px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: 0.4s;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.card:hover{
+    transform: translateY(-6px);
+
+    border-color: rgba(59,130,246,0.4);
+}
+
+
+
+/* Top Glow */
+
+.card::before{
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    background: rgba(59,130,246,0.15);
+
+    border-radius: 50%;
+
+    top: -80px;
+    right: -80px;
+
+    filter: blur(30px);
+}
+
+
+
+/* Heading */
+
+.card h2{
+    font-size: 28px;
+
+    line-height: 1.2;
+
+    margin-bottom: 14px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+
+/* Text */
+
+.card-text{
+    color: #94a3b8;
+
+    line-height: 1.7;
+
+    margin-bottom: 28px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+
+/* Input */
+
+.card input{
+    width: 100%;
+
+    padding: 17px 18px;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    background: rgba(255,255,255,0.04);
+
+    color: white;
+
+    font-size: 15px;
+
+    margin-bottom: 18px;
+
+    transition: 0.3s;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.card input:focus{
+    outline: none;
+
+    border-color: #3b82f6;
+
+    background: rgba(255,255,255,0.06);
+}
+
+.card input::placeholder{
+    color: #64748b;
+}
+
+
+
+/* Button */
+
+.card button{
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    background: linear-gradient(to right, #2563eb, #3b82f6);
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.card button:hover{
+    transform: translateY(-3px);
+
+    box-shadow: 0 15px 30px rgba(37,99,235,0.3);
+}
+
+
+
+/* Result Box */
+
+.result-box{
+    margin-top: 24px;
+
+    background: rgba(255,255,255,0.04);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 20px;
+
+    padding: 22px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.result-box h3{
+    font-size: 18px;
+
+    margin-bottom: 12px;
+}
+
+.result-box p{
+    color: #dbe4f0;
+
+    line-height: 1.7;
+
+    word-break: break-word;
+}
+
+
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    body{
+        padding: 40px 16px;
+    }
+
+    .card{
+        padding: 24px;
+    }
+
+    .card h2{
+        font-size: 24px;
+    }
+
+    .assignment-wrapper{
+        grid-template-columns: 1fr;
+    }
+
+}
