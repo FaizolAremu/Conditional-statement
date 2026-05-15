@@ -72,3 +72,28 @@ bmiBtn.addEventListener('click', function() {
         bmiOutput.innerHTML = `Your BMI is ${bmi.toFixed(2)}.`;
     }
 });
+
+// Username Validator
+const usernameField = document.getElementById('usernameInput');
+const usernameResult = document.getElementById('usernameTitle');
+const usernameOutput = document.getElementById('usernameResultText');
+const usernameBtn = document.getElementById('validateUsernameBtn');
+
+usernameBtn.addEventListener('click', function() {
+    let username = usernameField.value;
+    let pattern = /^[a-zA-Z0-9_]+$/;
+
+    if (username.length < 3 || username.length > 15) {
+        usernameResult.innerHTML = "Invalid Username";
+        usernameOutput.innerHTML = "Username must be between 3 and 15 characters long.";
+    } else if (username === "") {
+        usernameResult.innerHTML = "Invalid Username";
+        usernameOutput.innerHTML = "Username cannot be empty.";
+    } else if (pattern.test(username)) {
+        usernameResult.innerHTML = "Valid Username";
+        usernameOutput.innerHTML = `${username} is accepted.`;
+    } else {
+        usernameResult.innerHTML = "Invalid Username";
+        usernameOutput.innerHTML = "Username can only contain letters, numbers, and underscores.";
+    }
+});
