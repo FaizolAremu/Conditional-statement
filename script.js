@@ -31,10 +31,10 @@ const tempField = document.getElementById('temperatureInput');
 const tempOutput = document.getElementById('tempResultText');
 const tempbtn = document.getElementById('checkTempBtn');
 
-tempbtn.addEventListener('click', function() {
+tempbtn.addEventListener('click', function () {
     let temperature = Number(tempField.value);
 
-    if  (temperature < 19) {
+    if (temperature < 19) {
         tempOutput.innerHTML = "Category: Cold";
     } else if (temperature >= 19 && temperature <= 28) {
         tempOutput.innerHTML = "Category: Warm";
@@ -50,7 +50,7 @@ const bmiOutput = document.getElementById('bmiResultText');
 const bmiResult = document.getElementById('bmiTitle');
 const bmiBtn = document.getElementById('CalculatebmiBtn');
 
-bmiBtn.addEventListener('click', function() {
+bmiBtn.addEventListener('click', function () {
     let weight = Number(weightField.value);
     let height = Number(heightField.value);
     let bmi = weight / (height * height);
@@ -79,7 +79,7 @@ const usernameResult = document.getElementById('usernameTitle');
 const usernameOutput = document.getElementById('usernameResultText');
 const usernameBtn = document.getElementById('validateUsernameBtn');
 
-usernameBtn.addEventListener('click', function() {
+usernameBtn.addEventListener('click', function () {
     let username = usernameField.value;
     let pattern = /^[a-zA-Z0-9_]+$/;
 
@@ -96,4 +96,41 @@ usernameBtn.addEventListener('click', function() {
         usernameResult.innerHTML = "Invalid Username";
         usernameOutput.innerHTML = "Username can only contain letters, numbers, and underscores.";
     }
+});
+
+// Lugguage Weight checker
+
+const bagInput = document.getElementById("bagWeight");
+const bagButton = document.getElementById("checkBagBtn");
+const bagTitle = document.getElementById("bagResultTitle");
+const bagText = document.getElementById("bagResultText");
+
+bagButton.addEventListener("click", function(){
+    let bagWeight = Number(bagInput.value);
+    console.log(bagWeight);
+
+    if(bagInput.value === "" || bagWeight <= 0){
+        bagTitle.innerHTML = "Invalid Weight";
+        bagText.innerHTML =
+        "Please enter a valid luggage weight.";
+    }
+    else if(bagWeight < 20){
+        bagTitle.innerHTML = "Underweight";
+        bagText.innerHTML =
+        `Your luggage weighs ${bagWeight}kg.`;
+
+    }
+    else if(bagWeight >= 20 && bagWeight <= 30){
+        bagTitle.innerHTML = "Allowed";
+        bagText.innerHTML =
+        `Your luggage weighs ${bagWeight}kg and is within allowed limit.`;
+
+    }
+    else{
+        bagTitle.innerHTML = "Overweight";
+        bagText.innerHTML =
+        `Your luggage weighs ${bagWeight}kg. Extra charges may apply.`;
+
+    }
+
 });
