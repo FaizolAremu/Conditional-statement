@@ -226,6 +226,37 @@ body{
     word-break: break-word;
 }
 
+textarea{
+    width: 100%;
+
+    min-height: 180px;
+
+    padding: 18px;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    background: rgba(255,255,255,0.05);
+
+    color: white;
+
+    font-size: 16px;
+
+    resize: none;
+
+    outline: none;
+
+    margin-bottom: 20px;
+
+    line-height: 1.7;
+}
+textarea:focus{
+    border-color: #8b5cf6;
+
+    box-shadow: 0 0 15px rgba(139,92,246,0.3);
+}
+
 
 
 /* Responsive */

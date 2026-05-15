@@ -165,3 +165,32 @@ emailButton.addEventListener("click", function(){
     }
 
 });
+
+// Essay Space Checker
+
+const essayInputField = document.getElementById("essayInput");
+const essayButton = document.getElementById("essayBtn");
+const essayTitleResult = document.getElementById("essayTitle");
+
+const essayTextOutput = document.getElementById("essayText");
+
+
+essayButton.addEventListener("click", function(){
+
+    let essay = essayInputField.value;
+     let cleanedEssay = essay.replace(/\s+/g, " ").trim();
+
+    if(essay === ""){
+        essayTitleResult.innerHTML = "Empty Essay";
+        essayTextOutput.innerHTML =
+        "Please enter an essay.";
+
+    }
+    else{
+        essayTitleResult.innerHTML = "Essay Cleaned";
+
+        essayTextOutput.innerHTML = cleanedEssay;
+
+    }
+
+});
