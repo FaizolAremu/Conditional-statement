@@ -134,3 +134,34 @@ bagButton.addEventListener("click", function(){
     }
 
 });
+
+// Email validator
+
+const emailInput = document.getElementById("studentEmail");
+const emailButton = document.getElementById("emailBtn");
+const emailTitleResult = document.getElementById("emailTitle");
+const emailTextOutput = document.getElementById("emailText");
+
+emailButton.addEventListener("click", function(){
+    let email = emailInput.value;
+
+    if(email === ""){
+        emailTitleResult.innerHTML = "Invalid Input";
+        emailTextOutput.innerHTML =
+        "Please enter an email address.";
+
+    }
+    else if(email.endsWith("@oauife.edu.ng")){
+        emailTitleResult.innerHTML = "Valid Email";
+        emailTextOutput.innerHTML =
+        `${email} is accepted for registration.`;
+
+    }
+    else{
+        emailTitleResult.innerHTML = "Invalid Email"
+        emailTextOutput.innerHTML =
+        "Only emails ending with @oauife.edu.ng are allowed.";
+
+    }
+
+});
